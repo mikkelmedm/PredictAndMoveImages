@@ -1,6 +1,7 @@
 # PredictAndMoveImages
 
 Move images to new folder wrt. the retrained MobileNet class they belong to. 
+Can also be used for other Keras models. Simply load in your own model (this one works specifically for MobileNet) and run it. 
 
 Works great for large image folders, where specific images should be kept for training on GAN models and others not.
 
