@@ -11,10 +11,11 @@ from keras.utils.generic_utils import CustomObjectScope
 import keras
 import shutil
 
-# Works for MobileNet models:
+# This "with CustomObjectScope" is specific for MobileNet:
 with CustomObjectScope({'relu6': keras.applications.mobilenet.relu6,'DepthwiseConv2D': keras.applications.mobilenet.DepthwiseConv2D}):
     # Load your Keras model here:
     model = load_model('RetrainedMobileNet.h5')
+# To run other Keras models, simply load the model with load_model without the CustomObjectScope
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
